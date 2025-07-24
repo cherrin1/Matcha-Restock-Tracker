@@ -37,7 +37,9 @@
     "react-native-web": "~0.20.0",
     "expo-haptics": "~14.1.4",
     "expo-symbols": "~0.4.5",
-    "expo-blur": "~14.1.5"
+    "expo-blur": "~14.1.5",
+    "expo-background-fetch": "~13.1.6",
+    "expo-task-manager": "~13.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
