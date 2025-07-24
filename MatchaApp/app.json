@@ -17,7 +17,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.yourname.matchatracker",
-      "buildNumber": "1.0.0",
       "backgroundModes": [
         "background-fetch",
         "background-processing"
@@ -52,8 +51,12 @@
           "backgroundFetchInterval": 15
         }
       ],
-      "expo-task-manager",
-      "expo-router"
-    ]
+      "expo-task-manager"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5d3c9fec-98a8-4610-ba75-c4edcce05902"
+      }
+    }
   }
 }
