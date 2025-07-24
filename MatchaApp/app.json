@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Matcha Restock Tracker",
-    "slug": "matcha-restock-tracker",
+    "slug": "matcha-restock-tracker5",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,6 +20,8 @@
       "buildNumber": "1.0.0",
       "backgroundModes": [
         "background-fetch",
+        "background-processing",
+        "background-fetch",
         "background-processing"
       ],
       "infoPlist": {
@@ -27,15 +29,21 @@
           "NSAllowsArbitraryLoads": true
         },
         "BGTaskSchedulerPermittedIdentifiers": [
+          "com.yourname.matchatracker.stockcheck",
           "com.yourname.matchatracker.stockcheck"
-        ]
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.WAKE_LOCK"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -49,5 +57,6 @@
       ],
       "expo-task-manager"
     ]
+    }
   }
 }
