@@ -20,8 +20,6 @@
       "buildNumber": "1.0.0",
       "backgroundModes": [
         "background-fetch",
-        "background-processing",
-        "background-fetch",
         "background-processing"
       ],
       "infoPlist": {
@@ -29,7 +27,6 @@
           "NSAllowsArbitraryLoads": true
         },
         "BGTaskSchedulerPermittedIdentifiers": [
-          "com.yourname.matchatracker.stockcheck",
           "com.yourname.matchatracker.stockcheck"
         ],
         "ITSAppUsesNonExemptEncryption": false
@@ -55,8 +52,8 @@
           "backgroundFetchInterval": 15
         }
       ],
-      "expo-task-manager"
+      "expo-task-manager",
+      "expo-router"
     ]
-    }
   }
 }
