@@ -233,16 +233,15 @@ export default function HomeScreen() {
               
               // Test 2: CORS proxy
               console.log('🧪 Test 2: Testing CORS proxy...');
-              const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://www.amazon.com/dp/B00JBQZPX8')}`;
+              const proxyUrl = `https://cors.sh/https://www.amazon.com/dp/B00JBQZPX8`;
               console.log('📡 Proxy URL:', proxyUrl);
               
               const response2 = await fetch(proxyUrl);
               console.log('📊 Proxy response status:', response2.status);
               
-              const data2 = await response2.json();
-              console.log('📦 Proxy response keys:', Object.keys(data2));
-              console.log('📄 Content length:', data2.contents?.length || 0);
-              console.log('📄 First 200 chars:', data2.contents?.substring(0, 200) || 'No content');
+              const data2 = await response2.text();
+              console.log('📄 Content length:', data2?.length || 0);
+              console.log('📄 First 200 chars:', data2?.substring(0, 200) || 'No content');
               
               // Test 3: Check if MatchaStockService exists
               console.log('🧪 Test 3: Testing MatchaStockService...');
@@ -259,41 +258,6 @@ export default function HomeScreen() {
         >
           <Text style={{ color: 'white', fontWeight: 'bold' }}>
             🧪 DEBUG: Test Fetch
-          </Text>
-        </TouchableOpacity>
-
-        {/* Test Notification Button */}
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#4CAF50',
-            padding: 15,
-            marginHorizontal: 20,
-            marginBottom: 20,
-            borderRadius: 8,
-            alignItems: 'center',
-          }}
-          onPress={async () => {
-            console.log('🧪 Testing notifications...');
-            
-            try {
-              const success = await MatchaStockService.sendManualTestNotification();
-              if (success) {
-                Alert.alert(
-                  'Test Notification Sent!', 
-                  'Check if you receive a notification in a few seconds. If not, check your device notification settings.',
-                  [{ text: 'OK' }]
-                );
-              } else {
-                Alert.alert('Failed', 'Could not send test notification. Check console logs.');
-              }
-            } catch (error: any) {
-              console.error('❌ Notification test error:', error);
-              Alert.alert('Error', 'Notification test failed: ' + error.message);
-            }
-          }}
-        >
-          <Text style={{ color: 'white', fontWeight: 'bold' }}>
-            📱 TEST NOTIFICATION
           </Text>
         </TouchableOpacity>
 
